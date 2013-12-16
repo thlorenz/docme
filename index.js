@@ -14,7 +14,6 @@ var go = module.exports =
  * It then updates the given README with the githubified version of the generated API docs.
  * 
  * @name docme
- * @memberof Public
  * @function
  * @param {String} readme path to readme in which the API docs should be updated
  * @param {Array.<String>} args consumed by docme
