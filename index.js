@@ -30,7 +30,7 @@ function docme(readme, args, jsdocargs, cb) {
   var projectRoot = args.projectRoot || process.cwd()
     , projectName = path.basename(projectRoot)
 
-  // TODO: mutiny -> concat results -> update readme section
+  // TODO: update readme section
 
   initTmpDir(projectName, function (err, tmpdir) {
     if (err) return cb(err);

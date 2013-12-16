@@ -22,7 +22,9 @@
     "through2": "~0.2.3",
     "runnel": "~0.5.1",
     "rimraf": "~2.2.5",
-    "mutiny": "~0.3.0"
+    "mutiny": "~0.3.0",
+    "prune-html": "~0.1.0",
+    "transformify": "~0.1.0"
   },
   "devDependencies": {
     "nave": "~0.4.3",
