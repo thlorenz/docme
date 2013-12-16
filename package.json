@@ -20,7 +20,9 @@
     "npmlog": "0.0.6",
     "jsdoc": "~3.3.0-alpha2",
     "mutiny": "~0.2.0",
-    "through2": "~0.2.3"
+    "through2": "~0.2.3",
+    "runnel": "~0.5.1",
+    "rimraf": "~2.2.5"
   },
   "devDependencies": {
     "nave": "~0.4.3",
