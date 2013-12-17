@@ -139,6 +139,7 @@ It then updates the given README with the githubified version of the generated A
 </section>
 </div>
 
+*generated with [docme](https://github.com/thlorenz/docme)*
 <!-- END docme generated API please keep comment here to allow auto update -->
 
 ## License
