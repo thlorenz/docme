@@ -24,7 +24,8 @@
     "rimraf": "~2.2.5",
     "mutiny": "~0.3.0",
     "prune-html": "~0.1.0",
-    "transformify": "~0.1.0"
+    "transformify": "~0.1.0",
+    "update-section": "~0.1.1"
   },
   "devDependencies": {
     "nave": "~0.4.3",

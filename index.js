@@ -1,11 +1,53 @@
 'use strict';
 
-var log        =  require('npmlog')
-  , runnel     =  require('runnel')
-  , path       =  require('path')
-  , runJsdoc   =  require('./lib/run-jsdoc')
-  , initTmpDir =  require('./lib/init-tmp-dir')
-  , docmeify   =  require('./lib/docmeify')
+var log          =  require('npmlog')
+  , runnel       =  require('runnel')
+  , path         =  require('path')
+  , fs           =  require('fs')
+  , format       =  require('util').format
+  , rmrf         =  require('rimraf')
+  , exists       =  fs.exists || path.exitsts
+  , runJsdoc     =  require('./lib/run-jsdoc')
+  , initTmpDir   =  require('./lib/init-tmp-dir')
+  , docmeify     =  require('./lib/docmeify')
+  , updateReadme =  require('./lib/update-readme')
+
+function clean(tmpdir, cb) {
+  log.info('docme', 'Cleaning up ...');
+  log.verbose('docme', 'Removing tmp dir', tmpdir);
+  rmrf(tmpdir, cb);
+}
+
+function update(projectRoot, projectName, jsdocargs, readme, cb) {
+  initTmpDir(projectName, function (err, tmpdir) {
+    if (err) return cb(err);
+    
+    var tasks = [
+        runJsdoc.bind(null, projectRoot, tmpdir, jsdocargs)
+      , docmeify
+      , updateReadme.bind(null, readme)
+      , clean.bind(null, tmpdir)
+      , cb
+    ]
+    runnel(tasks);
+  })
+}
+
+function validateFile(fp, cb) {
+  fs.stat(fp, function (err, stat) {
+    if (err) return cb(err);
+    if (!stat.isFile()) return cb(new Error(format('%s is not a file!', fp)));
+    cb(null, fp);
+  });
+}
+
+function resolveReadme(readme, cb) {
+  var fp = path.resolve(readme);
+  exists(fp, function (yes) {
+    if (yes) return validateFile(fp, cb);
+    cb(new Error(format('The readme: %s was not found from %s!', readme, process.cwd())));
+  })
+}
 
 var go = module.exports = 
 
@@ -30,24 +72,17 @@ function docme(readme, args, jsdocargs, cb) {
   var projectRoot = args.projectRoot || process.cwd()
     , projectName = path.basename(projectRoot)
 
-  // TODO: update readme section
-
-  initTmpDir(projectName, function (err, tmpdir) {
+  resolveReadme(readme, function (err, fullPath) {
     if (err) return cb(err);
-    
-    var tasks = [
-        runJsdoc.bind(null, projectRoot, tmpdir, jsdocargs)
-      , docmeify
-      , cb
-    ]
-    runnel(tasks);
-  })
+    log.info('docme', 'Updating API in "%s" with current jsdocs', readme);
+    update(projectRoot, projectName, jsdocargs, fullPath, cb);
+  });
 }
 
 // Test
 if (!module.parent && typeof window === 'undefined') {
-  go('', { loglevel: 'silly' }, [], function (err, res) {
+  go('test.md', { loglevel: 'info' }, [], function (err) {
     if (err) return console.error(err);
-    console.log('Success!\n', res);  
+    log.info('docme', 'Everything is OK');
   });
 }
