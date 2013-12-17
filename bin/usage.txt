@@ -1,0 +1,27 @@
+usage: docme <readme> <docme-options> -- <jsdoc-options>
+
+  Generates jsdocs for non-private members of the project in the current folder.
+  It then updates the given README with the githubified version of the generated API docs.
+
+  Note: overriding the jsdoc destination (-d, --destination) is not possible since docme will write files to a temp dir
+
+OPTIONS:
+
+  -l, --loglevel  level at which to log: silly|verbose|info|warn|error|silent -- default: info
+  
+  -h, --help      Print this help message.
+
+
+EXAMPLES:
+  
+  Generate with default options and update README.md
+    
+    docme README.md
+
+  Override [jsdocconf.json](http://usejsdoc.org/about-configuring-jsdoc.html):
+
+    docme README.md-- --configure ./myconf.json
+
+  Override loglevel and jsoc configuration:
+
+    docme API.md --loglevel silly -- --configure ./myconf.json

@@ -78,11 +78,3 @@ function docme(readme, args, jsdocargs, cb) {
     update(projectRoot, projectName, jsdocargs, fullPath, cb);
   });
 }
-
-// Test
-if (!module.parent && typeof window === 'undefined') {
-  go('test.md', { loglevel: 'info' }, [], function (err) {
-    if (err) return console.error(err);
-    log.info('docme', 'Everything is OK');
-  });
-}

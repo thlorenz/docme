@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Generates github compatible API documentation from your project's jsdocs and adds them to your Readme.",
   "main": "index.js",
+  "bin": {
+    "docme": "bin/docme.js"
+  },
   "scripts": {
     "test-main": "tap test/*.js",
     "test-0.8": "nave use 0.8 npm run test-main",
@@ -25,7 +28,8 @@
     "mutiny": "~0.3.0",
     "prune-html": "~0.1.0",
     "transformify": "~0.1.0",
-    "update-section": "~0.1.1"
+    "update-section": "~0.1.1",
+    "minimist": "0.0.5"
   },
   "devDependencies": {
     "nave": "~0.4.3",
