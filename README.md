@@ -1,4 +1,4 @@
-# docme [![build status](https://secure.travis-ci.org/thlorenz/docme.png)](http://travis-ci.org/thlorenz/docme)
+# docme [![build status](https://secure.travis-ci.org/thlorenz/docme.png?branch=master)](http://travis-ci.org/thlorenz/docme)
 
 Generates github compatible API documentation from your project's jsdocs and adds them to your Readme.
 
