@@ -1,6 +1,6 @@
 {
   "name": "docme",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generates github compatible API documentation from your project's jsdocs and adds them to your Readme.",
   "main": "index.js",
   "bin": {
