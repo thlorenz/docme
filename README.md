@@ -31,7 +31,7 @@ EXAMPLES:
 
   Override [jsdocconf.json](http://usejsdoc.org/about-configuring-jsdoc.html):
 
-    docme README.md-- --configure ./myconf.json
+    docme README.md -- --configure ./myconf.json
 
   Override loglevel and jsoc configuration:
 
