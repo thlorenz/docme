@@ -22,7 +22,6 @@ OPTIONS:
   
   -h, --help      Print this help message.
 
-
 EXAMPLES:
   
   Generate with default options and update README.md
