@@ -1,6 +1,6 @@
 {
   "name": "docme",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generates github compatible API documentation from your project's jsdocs and adds them to your Readme.",
   "main": "index.js",
   "bin": {
@@ -36,7 +36,14 @@
     "nave": "~0.4.3",
     "tap": "~0.4.3"
   },
-  "keywords": [],
+  "keywords": [
+    "jsdoc",
+    "documentation",
+    "generate",
+    "readme",
+    "github",
+    "comments"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
