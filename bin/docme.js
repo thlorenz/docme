@@ -22,7 +22,7 @@ var argv = minimist(process.argv.slice(2)
 
 argv.loglevel = argv.loglevel || argv.l || 'info';
 
-if (argv.h || argv.help) return usage;
+if (argv.h || argv.help) return usage();
 
 var readme = argv._.shift();
 if (!readme) {
