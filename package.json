@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/thlorenz/docme",
   "dependencies": {
-    "jsdoc": "~3.3.0-alpha2",
+    "jsdoc": "3.3.0-alpha2",
     "jsdoc-githubify": "~0.1.2",
     "minimist": "0.0.5",
     "mutiny": "~0.4.0",
