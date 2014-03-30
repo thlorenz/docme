@@ -19,18 +19,18 @@
   },
   "homepage": "https://github.com/thlorenz/docme",
   "dependencies": {
-    "jsdoc-githubify": "~0.1.2",
-    "npmlog": "0.0.6",
     "jsdoc": "~3.3.0-alpha2",
-    "through2": "~0.2.3",
-    "runnel": "~0.5.1",
-    "rimraf": "~2.2.5",
-    "mutiny": "~0.3.0",
-    "prune-html": "~0.1.0",
-    "transformify": "~0.1.0",
-    "update-section": "~0.1.1",
+    "jsdoc-githubify": "~0.1.2",
     "minimist": "0.0.5",
-    "readable-stream": "~1.1.9"
+    "mutiny": "~0.4.0",
+    "npmlog": "0.0.6",
+    "prune-html": "~0.1.0",
+    "readable-stream": "~1.1.9",
+    "rimraf": "~2.2.5",
+    "runnel": "~0.5.1",
+    "through2": "~0.2.3",
+    "transformify": "~0.1.0",
+    "update-section": "~0.1.1"
   },
   "devDependencies": {
     "nave": "~0.4.3",
